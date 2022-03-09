@@ -15,7 +15,8 @@ library(smooth)
 
 # Cargamos los datos 
 
-isciii <- read_csv("https://cnecovid.isciii.es/covid19/resources/casos_hosp_uci_def_sexo_edad_provres.csv")
+isciii <- read_csv("https://cnecovid.isciii.es/covid19/resources/casos_hosp_uci_def_sexo_edad_provres.csv",
+                   na = c(""))
 
 # Para barplot:
 
