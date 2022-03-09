@@ -17,7 +17,8 @@ library(feasts)
 # Cargamos los datos 
 # También necesario en ui.R porque se extraen de aquí los rangos de edad
 
-isciii <- read_csv("https://cnecovid.isciii.es/covid19/resources/casos_hosp_uci_def_sexo_edad_provres.csv")
+isciii <- read_csv("https://cnecovid.isciii.es/covid19/resources/casos_hosp_uci_def_sexo_edad_provres.csv",
+                   na = c(""))
 
 # Para el barplot agregamos (sumamos) todos los datos (casos) hasta la fecha de descarga
 
@@ -44,7 +45,7 @@ categoricas <- names(data_para_plot)[cats]
 
 shinyUI(
   navbarPage("Shiny Visualización COVID-19 en España",
-#             theme = shinytheme("united"),
+             theme = shinytheme("united"),
                    tabPanel("Introducción",
                             mainPanel(
                               h1("Ejemplo Visualización con R-shiny", align = "center"),
@@ -98,7 +99,7 @@ shinyUI(
                         
                       ),
                       
-             tabPanel("Barplot",
+             tabPanel("Gráfico de barras",
                       sidebarPanel(
                         
                         selectInput(inputId = 'y', 
